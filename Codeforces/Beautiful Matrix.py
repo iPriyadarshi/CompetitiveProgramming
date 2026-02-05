@@ -1,7 +1,9 @@
-# Codeforces Problem 263A - Beautiful Matrix
-matrix = [list(map(int, input().split())) for _ in range(5)]
-for i in range(1, 6):
-    for j in range(1, 6):
-        if matrix[i][j] == 1:
-            print(abs(i - 3) + abs(j - 3))
-            break
+for i in range(5):
+    row = list(map(int, input().split()))
+    if 1 in row:
+        x = i + 1  # row index (1-based)
+        y = row.index(1) + 1  # column index (1-based)
+
+# Calculate Manhattan distance to center (3, 3)
+moves = abs(x - 3) + abs(y - 3)
+print(moves)
